@@ -33,7 +33,7 @@ export default tseslint.config({
 
 To install and set up locally, follow these steps:
 
-1. Clone the repository from GitHub: git clone **https://github.com/crac-learning/Cybersec_frontend.git**.
+1. Clone the repository from GitHub: git clone **https://github.com/crac-learning/lab_node**.
 2. Install the required dependencies by running **yarn install** in the project directory.
 3. Start the development server: yarn dev.
 4. Access this project in your web browser at **http://localhost:5173/**.
