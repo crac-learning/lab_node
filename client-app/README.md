@@ -18,17 +18,29 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
 - Optionally add `...tseslint.configs.stylisticTypeChecked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
+### ⚙️ Installation
+
+To install and set up locally, follow these steps:
+
+1. Clone the repository from GitHub: git clone **https://github.com/crac-learning/Cybersec_frontend.git**.
+2. Install the required dependencies by running **yarn install** in the project directory.
+3. Start the development server: yarn dev.
+4. Access this project in your web browser at **http://localhost:5173/**.
+
+### 📂 Folder Structure
+
+<!--
 ```js
 // eslint.config.js
 import react from 'eslint-plugin-react'
@@ -47,4 +59,4 @@ export default tseslint.config({
     ...react.configs['jsx-runtime'].rules,
   },
 })
-```
+``` -->
