@@ -40,6 +40,68 @@ To install and set up locally, follow these steps:
 
 ### 📂 Folder Structure
 
+```
+src
+├── App.tsx
+├── main.tsx
+├── Assets
+│ ├── fonts
+| ├── icons
+│ ├── images
+│ └── ...
+├── Components
+│ ├── Alert
+│ ├── ...
+│ └── ...
+├── Config
+│ ├── api
+│ └── constants
+├── Constants
+│ └── ...
+├── Layout
+│ ├── Footer
+│ ├── Header
+│ │ ├── Redux
+│ │ │ ├── Queries.ts
+│ │ │ ├── index.ts
+│ │ │ └── Types.ts
+│ │ └── ...
+│ └── ...
+├── Pages
+│ ├── Auth
+│ │ ├── Login
+│ │ ├── Signup
+│ │ └── Redux
+│ │ ├── Queries.ts
+│ │ ├── index.ts
+│ │ └── Types.ts
+│ ├── Home
+│ ├── Shop
+│ │ ├── Accessories
+│ │ ├── Footwear
+│ │ └── Redux
+│ │ ├── Queries.ts
+│ │ ├── index.ts
+│ │ └── Types.ts
+│ └── ...
+├── Routes
+│ ├── constants.ts
+│ └── index.tsx
+├── Store
+│ ├── hooks.ts
+│ ├── index.ts
+│ └── reducer
+├── Style
+│ └── main.css
+└── Utils
+└── ...
+
+```
+
+### ⚙️ Application Structure
+
+## Store Front
+
 <!--
 ```js
 // eslint.config.js
@@ -60,3 +122,7 @@ export default tseslint.config({
   },
 })
 ``` -->
+
+```
+
+```
