@@ -114,7 +114,7 @@ export const connectToken = async (req: Request, res: Response) => {
     const email = (verify as { email: string }).email
 
     // Find the user in the database by the extracted username
-    const userObj = await findSelectedByKey({ email }, '-password')
+    const userObj = await findSelectedByKey({ email }, '-password', [''])
 
     // If the user cannot be found, return a not found error response
     if (!userObj) {

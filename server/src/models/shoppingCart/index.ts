@@ -25,7 +25,7 @@ const ShoppingCart = new Schema<IShoppingCart>(
   },
   {
     timestamps: true,
-    collection: 'shopping_cart',
+    collection: 'ShoppingCart',
   }
 )
 

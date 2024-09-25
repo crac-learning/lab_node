@@ -77,10 +77,12 @@ export const updateProductReviewDetails = async (
 
 export const findSelectedByKey = async (
   query: any,
-  remove: string
-): Promise<IProductReviewObject | null> => {
+  remove: string,
+  toPopulate: string[]
+): Promise<IProductReviewObject[] | null> => {
   try {
-    const productReview = await ProductReview.findOne(query)
+    const productReview = await ProductReview.find(query)
+      .populate(toPopulate)
       .select(remove)
       .exec()
     return productReview

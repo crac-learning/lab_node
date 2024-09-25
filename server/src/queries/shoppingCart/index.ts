@@ -65,7 +65,10 @@ export const updateShoppingCartDetails = async (
   remove: string = ''
 ): Promise<IShoppingCartObject | null> => {
   try {
-    const updatedShoppingCartData = await ShoppingCart.findOneAndUpdate(query, obj).exec()
+    const updatedShoppingCartData = await ShoppingCart.findOneAndUpdate(
+      query,
+      obj
+    ).exec()
     return updatedShoppingCartData
   } catch (error) {
     throw error
@@ -74,10 +77,12 @@ export const updateShoppingCartDetails = async (
 
 export const findSelectedByKey = async (
   query: any,
-  remove: string
-): Promise<IShoppingCartObject | null> => {
+  toPopulate: string[]
+): Promise<IShoppingCartObject[] | null> => {
   try {
-    const shoppingCart = await ShoppingCart.findOne(query).select(remove).exec()
+    const shoppingCart = await ShoppingCart.find(query)
+      .populate(toPopulate)
+      .exec()
     return shoppingCart
   } catch (error) {
     return null

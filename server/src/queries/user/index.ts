@@ -86,7 +86,9 @@ export const updateUserDetails = async (
   remove: string = ''
 ): Promise<IUserObject | null> => {
   try {
-    const updatedUserData = await User.findOneAndUpdate(query, obj).exec()
+    const updatedUserData = await User.findOneAndUpdate(query, obj, {
+      new: true,
+    }).exec()
     return updatedUserData
     // console.log(`User with email ${email} is now verified.`);
   } catch (error) {
@@ -96,10 +98,14 @@ export const updateUserDetails = async (
 
 export const findSelectedByKey = async (
   query: any,
-  remove: string
-): Promise<IUserObject | null> => {
+  remove: string,
+  toPopulate: string[]
+): Promise<IUserObject[] | null> => {
   try {
-    const user = await User.findOne(query).select(remove).exec()
+    const user = await User.find(query)
+      .select(remove)
+      .populate(toPopulate)
+      .exec()
     return user
   } catch (error) {
     return null

@@ -135,14 +135,14 @@ export const SearchProduct = async (req: Request, res: Response) => {
   }
 }
 
-export const AddBulkProducts = async () => {
-  const unfiledProduct: any[] = []
+// export const AddBulkProducts = async () => {
+//   const unfiledProduct: any[] = []
 
-  storeData.map(async product => {
-    unfiledProduct.push(create(product))
-  })
+//   storeData.map(async product => {
+//     unfiledProduct.push(create(product))
+//   })
 
-  const proxut = await Promise.all(unfiledProduct)
+//   const proxut = await Promise.all(unfiledProduct)
 
-  console.log('unfiledProduct', proxut)
-}
+//   console.log('unfiledProduct', proxut)
+// }

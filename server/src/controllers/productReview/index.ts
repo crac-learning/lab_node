@@ -2,9 +2,10 @@ import { Request, Response } from 'express'
 
 import { StatusCodes } from 'http-status-codes'
 import { validateProductReviewCreate } from '../../validations/productReview'
-import { create } from '../../queries/productReview'
-import product, { read } from '../../queries/product'
+import { create, findSelectedByKey } from '../../queries/productReview'
+import { read } from '../../queries/product'
 import UserQueries from '../../queries/user'
+import { IUserObject } from '../../queries/user/types'
 
 // Controller function to create a new product review
 export const CreateProductReview = async (req: Request, res: Response) => {
@@ -24,6 +25,34 @@ export const CreateProductReview = async (req: Request, res: Response) => {
         data: null,
       })
     }
+  } catch (error: any) {
+    res
+      .status(StatusCodes.NOT_ACCEPTABLE)
+      .json({ data: null, error: error.message })
+  }
+}
+
+// Controller function to create a new product review
+export const GetProductReviews = async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.body
+
+    const productReviews = await findSelectedByKey({ product: productId }, '', [
+      'user',
+    ])
+
+    const filteredReviews = productReviews?.map(item => ({
+      _id: item._id,
+      product: item.product,
+      name: (item.user as IUserObject)?.fullName,
+      review: item.review,
+      rating: item.rating,
+    }))
+
+    return res.status(StatusCodes.OK).json({
+      error: null,
+      data: filteredReviews,
+    })
   } catch (error: any) {
     res
       .status(StatusCodes.NOT_ACCEPTABLE)

@@ -65,7 +65,10 @@ export const updateUserAddressDetails = async (
   remove: string = ''
 ): Promise<IUserAddressObject | null> => {
   try {
-    const updatedUserAddressData = await UserAddress.findOneAndUpdate(query, obj).exec()
+    const updatedUserAddressData = await UserAddress.findOneAndUpdate(
+      query,
+      obj
+    ).exec()
     return updatedUserAddressData
     // console.log(`UserAddress with email ${email} is now verified.`);
   } catch (error) {
@@ -75,11 +78,22 @@ export const updateUserAddressDetails = async (
 
 export const findSelectedByKey = async (
   query: any,
-  remove: string
-): Promise<IUserAddressObject | null> => {
+  toPopulate: string[]
+): Promise<IUserAddressObject[] | null> => {
   try {
-    const userAddress = await UserAddress.findOne(query).select(remove).exec()
+    const userAddress = await UserAddress.find(query)
+      .populate(toPopulate)
+      .exec()
     return userAddress
+  } catch (error) {
+    return null
+  }
+}
+
+export const deleteByKey = async (query: any): Promise<Boolean | null> => {
+  try {
+    await UserAddress.deleteOne(query).exec()
+    return true
   } catch (error) {
     return null
   }
@@ -90,5 +104,6 @@ export default {
   create,
   findById,
   findSelectedByKey,
+  deleteByKey,
   updateUserAddressDetails,
 }
