@@ -1,5 +1,6 @@
 import {
   createBrowserRouter,
+  Navigate,
   redirect,
   RouterProvider,
 } from "react-router-dom";
@@ -16,6 +17,13 @@ import {
   FORHER,
   ACCESSORIES,
   FOOTWEAR,
+  ACCOUNT_SETTINGS,
+  PROFILE,
+  ADDRESS_BOOK,
+  PAYMENT_OPTIONS,
+  ORDERS,
+  WISHLIST,
+  RETURNS,
 } from "./constant";
 
 import Home from "Pages/Home";
@@ -28,6 +36,13 @@ import ForHer from "Pages/Shop/ForHer";
 import Accessories from "Pages/Shop/Accessories";
 import Footwear from "Pages/Shop/Footwear";
 import ShopHome from "Pages/Shop/ShopHome";
+import MyProfile from "Pages/Shop/AccountSettings/MyProfile";
+import AddressBook from "Pages/Shop/AccountSettings/AddressBook";
+import PaymentOptions from "Pages/Shop/AccountSettings/PaymentOptions";
+import ProfileForm from "Pages/Shop/AccountSettings/ProfileForm";
+import MyOrders from "Pages/Shop/Orders/MyOrders";
+import Returns from "Pages/Shop/Orders/Returns";
+import MyWishlist from "Pages/Shop/Wishlist/MyWishlist";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +81,18 @@ const router = createBrowserRouter([
           { path: FORHER, element: <ForHer /> },
           { path: ACCESSORIES, element: <Accessories /> },
           { path: FOOTWEAR, element: <Footwear /> },
+          { path: FOOTWEAR, element: <Footwear /> },
+          {
+            path: ACCOUNT_SETTINGS, element: <MyProfile />, children: [
+              { path: PROFILE, element: <ProfileForm /> },
+              { path: ADDRESS_BOOK, element: <AddressBook /> },
+              { path: PAYMENT_OPTIONS, element: <PaymentOptions /> },
+              { path: ORDERS, element: <MyOrders /> },
+              { path: RETURNS, element: <Returns/> },
+              { path: WISHLIST, element: <MyWishlist /> },
+              {path: "", element : <Navigate to = {PROFILE} replace/> } 
+            ]
+          }
         ],
       },
     ],

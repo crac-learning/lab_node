@@ -3,12 +3,20 @@ import express, { Request, Response } from 'express'
 import passport from 'passport'
 import session from 'express-session'
 import cors from 'cors'
+import path from 'path'
 
 // ************** dev server dependencies ************** //
 import http from 'http'
 
 // Configuration for environment variables
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
+// const PORT= 8000
+// const JWTSECRET= 'CyberSecLab'
+// const DB_PATH= 'mongodb+srv://defmax:98eFOEMYSS0ht2V0@defhawk-test.i7fmmop.mongodb.net/ecom-lab'
+
+console.log( path.resolve( __dirname ,  '../.env.development' ));
+
+dotenv.config({ path: path.resolve( __dirname ,  '../.env.development' ) }
+)
 
 import ConectDB from './config/db'
 import privateRouteConfig from './config/route.config'
@@ -48,6 +56,9 @@ const server = http.createServer(app)
 routes.init(app)
 
 server.listen(port, () => {
+  console.log(process.env.DB_PATH, "here")
+  console.log(process.env.JWTSECRET, "here")
+  console.log(process.env.PORT, "here")
   ConectDB(process.env.DB_PATH || '')
     .then(() => {
       console.log('Db connected successfully')

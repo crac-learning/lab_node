@@ -26,6 +26,7 @@ import {
   ACCESSORIES,
   FOOTWEAR,
   LOGIN,
+  ACCOUNT_SETTINGS,
 } from "Routes/constant";
 import { selectSearchedProducts, setSearchedProducts } from "Pages/Shop/Redux";
 import { IProduct } from "Utils/types";
@@ -73,6 +74,10 @@ function Header() {
     localStorage.clear();
     navigate(LOGIN);
   };
+
+  const openSettings = () => {
+    navigate(ACCOUNT_SETTINGS);
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -339,15 +344,21 @@ function Header() {
                         onMouseLeave={() => setShowLogout(false)}
                       >
                         <img src={UserIcon} alt="user" className="w-10" />
-                        {showLogout ? (
+                        {showLogout ? ( 
+                          <>
                           <div
                             className="absolute shadow-md w-fit bg-white rounded-md py-3 px-5 text-primary-main -left-6 mx-auto cursor-pointer"
-                            onClick={logout}
+                            // onClick={logout}
                           >
-                            <div className="text-center hover:font-medium">
+                            <div className="text-center hover:font-medium " onClick={logout}>
                               Logout
                             </div>
+                            <div className="text-center hover:font-medium" onClick={openSettings}>
+                              Settings
+                            </div>
+                            
                           </div>
+                          </>
                         ) : null}
                       </div>
                     </div>
