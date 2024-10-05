@@ -1,14 +1,14 @@
 import {FormInput} from 'Components/Shop/AccountSettings/FormFields';
 import React from 'react';
-import { IoPersonSharp } from 'react-icons/io5';
+import { RxPerson } from "react-icons/rx";
 
 const ProfileForm: React.FC = () => {
   return (
-    <div className="w-3/4 bg-white p-8 text-left flex flex-col">
+    <div className="bg-white p-8 text-left flex flex-col">
       <div className="text-xl font-semibold mb-4 text-sky-600">Edit Your Profile</div>
       {/* file/ image upload section */}
-      <div className='rounded-lg'>
-      <IoPersonSharp  className='text-white border bg-blue-500 size-52 rounded-full p-8'/>
+      <div className='mb-4'>
+      <RxPerson  className='text-white border bg-blue-500 size-52 rounded-full p-8'/>
       </div>
       
 

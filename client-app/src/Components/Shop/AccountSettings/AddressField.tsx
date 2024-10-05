@@ -41,7 +41,7 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
             >
                 <div className="text-sm">
                     <div className="flex justify-between items-center font-bold text-blue-500 mb-6">
-                        <div> Add Your Address</div>
+                        <div> Edit Your Address</div>
                         <div onClick={handleCloseModal} className="cursor-pointer"> X </div>
                     </div>
                     <form>
@@ -50,8 +50,8 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                         <FormInput label="Address" placeholder="Your Address" type="text" /> <br />
                         <FormInput placeholder="Apartment, suite, etc. (optional)" type="text" /> <br />
                         <div className="flex justify-between">
-                            <OptionInput label="City" placeholder="Md" options={['Sm', 'District', 'Country', 'State', 'Md']} /> <br />
-                            <OptionInput label="State" placeholder="Md" options={['HM', 'Md', 'DL', 'NY']} /> <br />
+                            <OptionInput label="City" placeholder="Md" options={['Sm', 'District', 'Country', 'State', 'Md']} /> 
+                            <OptionInput label="State" placeholder="Md" options={['HM', 'Md', 'DL', 'NY']} />
                             <OptionInput label="PIN code" placeholder="Md" options={['122001', '122002', '122003', '122004', '122005']} />
                         </div>
                         <div className="flex items-center justify-end mt-5">
