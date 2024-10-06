@@ -7,7 +7,7 @@ const MyOrders: React.FC = () => {
     return (
         <div className="bg-white text-left flex flex-col">
         <div className='flex justify-between mb-4 items-center'>
-          <h2 className="text-xl font-semibold mb-4 text-black">Your Orders</h2>
+          <h2 className="text-xl font-medium mb-4 text-black">Your Orders</h2>
         </div>
   
         <div className='flex flex-col gap-6'>

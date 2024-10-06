@@ -12,8 +12,8 @@ const AddressBook: React.FC = () => {
   return (
     <div className=" bg-white p-2 text-left flex flex-col">
       <div className='flex justify-between mb-4 items-center'>
-        <h2 className="text-xl font-semibold mb-4 text-black">Your Addresses</h2>
-        <div><button className='text-sky-600 bg-transparent border-blue-500' onClick={handleOpenModal}>+ Add New Address</button></div>
+        <h2 className="text-xl font-medium mb-4 text-black">Your Addresses</h2>
+        <div><button className='text-[#9077D2] bg-transparent border-[#9077D2] px-8 py-4' onClick={handleOpenModal}>+ Add New Address</button></div>
       </div>
 
       <div className='flex flex-col gap-6'>
@@ -26,8 +26,8 @@ const AddressBook: React.FC = () => {
                 onClose={handleCloseModal}
             >
                 <div className="text-sm">
-                    <div className="flex justify-between items-center font-bold text-blue-500 mb-6">
-                        <div> Add Your Address</div>
+                    <div className="flex justify-between items-center mb-6">
+                        <div className='text-[#9077D2] font-medium'> Add Your Address</div>
                         <div onClick={handleCloseModal} className="cursor-pointer"> X </div>
                     </div>
                     <form>
@@ -38,13 +38,13 @@ const AddressBook: React.FC = () => {
                         <div className="flex justify-between">
                             <OptionInput label="City" placeholder="Md" options={['Sm', 'District', 'Country', 'State', 'Md']} /> 
                             <OptionInput label="State" placeholder="Md" options={['HM', 'Md', 'DL', 'NY']} />
-                            <OptionInput label="PIN code" placeholder="Md" options={['122001', '122002', '122003', '122004', '122005']} />
+                            <OptionInput label="PIN code" placeholder="Rimel" options={['122001', '122002', '122003', '122004', '122005']} />
                         </div>
-                        <div className="flex items-center justify-end mt-5">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">Cancel</button>
-                            <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-md">Save Changes</button>
+                        <div className="flex items-center justify-end gap-2 mt-5">
+                            <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
+                            <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
                         </div>
-
+    
                     </form>
                 </div>
             </BasicModal>

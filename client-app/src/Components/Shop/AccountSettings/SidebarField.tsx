@@ -12,7 +12,7 @@ const NavLinkComponent: React.FC<NavLinkProps> = ({ to, label, onClick }) => {
     return (
         <NavLink
             className={({ isActive }) =>
-                `${isActive ? 'text-purple-500 font-bold underline' : 'text-gray-600 hover:underline'}`
+                `${isActive ? 'text-[#9077D2] font-normal' : 'text-black font-normal'}`
             }
             onClick={onClick}
             to={to}

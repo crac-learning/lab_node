@@ -137,8 +137,9 @@ function Header() {
               boxShadow: "none",
               right: "auto",
               left: "auto",
-              width: "100%",
+              width: "120%",
               maxWidth: "1280px",
+              minHeight:"100px",
               height: isScrolled
                 ? {
                     lg: "7rem",
@@ -147,7 +148,7 @@ function Header() {
                     xxsm: "3.6rem",
                     xs: "3.6rem",
                   }
-                : "4rem",
+                : "4  rem",
               justifyContent: "center",
               alignItems: "center",
             }}
@@ -158,16 +159,16 @@ function Header() {
                 backgroundColor: "white",
                 paddingLeft: "0 !important",
                 paddingRight: "0 !important",
-                width: isScrolled ? "inherit" : "100%",
+                width: isScrolled ? "inherit" : "120%",
               }}
               className="px-0"
             >
-              <div className="header_section flex gap-3 justify-between items-center w-full">
+              <div className="header_section flex gap-4 justify-between items-center w-full ">
                 <div className="logo">
                   <img src={Logo} alt="logo" className="m-auto w-36" />
                 </div>
                 <div className="menu">
-                  <div className="menu_items flex gap-7 font-medium">
+                  <div className="menu_items flex gap-10 font-medium justify-center">
                     <Link to={SHOP}>
                       <div
                         className={`item text-primary-main ${
@@ -347,13 +348,13 @@ function Header() {
                         {showLogout ? ( 
                           <>
                           <div
-                            className="absolute shadow-md w-fit bg-white rounded-md py-3 px-5 text-primary-main -left-6 mx-auto cursor-pointer"
+                            className="absolute shadow-md w-fit bg-white rounded-md py-3 px-8 text-primary-main -left-6 mx-auto cursor-pointer"
                             // onClick={logout}
                           >
-                            <div className="text-center hover:font-medium " onClick={logout}>
+                            <div className="text-center hover:font-medium border-b w-full py-2 " onClick={logout}>
                               Logout
                             </div>
-                            <div className="text-center hover:font-medium" onClick={openSettings}>
+                            <div className="text-center hover:font-medium py-2" onClick={openSettings}>
                               Settings
                             </div>
                             

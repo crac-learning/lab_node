@@ -23,16 +23,16 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
 
     return (
         <>
-            <div className="flex flex-col bg-gray-100 rounded-md p-8">
-                <div className="flex justify-between items-center">
-                    <div className="font-bold text-black mb-1">{title}</div>
-                    <div className="flex flex-col md:flex-row text-[24px] gap-4">
-                        <FiEdit className="text-blue-500 cursor-pointer" onClick={handleOpenModal} />
-                        <HiOutlineTrash className="text-blue-500 cursor-pointer" onClick={handleOpenModal2} />
+            <div className="flex flex-col bg-gray-100 rounded-md p-8 font-medium">
+                <div className="flex justify-between items-center ">
+                    <div className=" text-black mb-1 ">{title}</div>
+                    <div className="flex flex-col md:flex-row text-[20px] gap-4">
+                        <FiEdit className="text-[#9077D2] cursor-pointer" onClick={handleOpenModal} />
+                        <HiOutlineTrash className="text-[#9077D2] cursor-pointer" onClick={handleOpenModal2} />
                     </div>
                 </div>
-                <div className="text-gray-500 font-semibold">{address}</div>
-                <span className="text-gray-500 font-semibold">{city}, {state} - {pincode}</span>
+                <div className="text-gray-500 text-xl">{address}</div>
+                <span className="text-gray-500 text-xl">{city}, {state} - {pincode}</span>
             </div>
 
             <BasicModal
@@ -40,7 +40,7 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                 onClose={handleCloseModal}
             >
                 <div className="text-sm">
-                    <div className="flex justify-between items-center font-bold text-blue-500 mb-6">
+                    <div className="flex justify-between items-center text-[#9077D2] font-medium mb-6">
                         <div> Edit Your Address</div>
                         <div onClick={handleCloseModal} className="cursor-pointer"> X </div>
                     </div>
@@ -54,9 +54,9 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                             <OptionInput label="State" placeholder="Md" options={['HM', 'Md', 'DL', 'NY']} />
                             <OptionInput label="PIN code" placeholder="Md" options={['122001', '122002', '122003', '122004', '122005']} />
                         </div>
-                        <div className="flex items-center justify-end mt-5">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">Cancel</button>
-                            <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-md">Save Changes</button>
+                        <div className="flex items-center justify-end gap-2 mt-5">
+                            <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
+                            <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
                         </div>
 
                     </form>
@@ -68,7 +68,7 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
              onClose={ handleCloseModal2 }
             >
                  <div className="text-lg">
-                    <div className="flex justify-between items-center font-bold text-blue-500 mb-6">
+                    <div className="flex justify-between items-center mb-6 text-[#9077D2] font-medium">
                         <div> Delete Address </div>
                         <div onClick={handleCloseModal2} className="cursor-pointer"> X </div>
                     </div>
@@ -76,7 +76,7 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                         <span className="text-center text-black">Are you sure you want to delete the <b>Home</b> address?</span>
                         <div className="flex items-center justify-around mt-5">
                             <button type="button" className="text-gray-500 bg-transparent font-semibold">No</button>
-                            <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-md">Yes</button>
+                            <button type="submit" className="bg-sky-600 text-white px-12 py-4 rounded-md">Yes</button>
                         </div>
 
                     </form>

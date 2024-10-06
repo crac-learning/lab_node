@@ -12,8 +12,8 @@ const MyProfile: React.FC = () => {
         {/* Welcome message at the top-right */}
         <div className="flex justify-between items-center mb-4">
           <div></div> {/* Empty div for balancing alignment */}
-          <div className="text-right">
-            Welcome <span className="text-blue-500">User123!</span>
+          <div className="text-right mb-4">
+            Welcome <span className="text-[#9077D2]">User123!</span>
           </div>
         </div>
 

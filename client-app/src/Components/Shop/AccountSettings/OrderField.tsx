@@ -20,14 +20,14 @@ const OrderField: React.FC<OrderFieldProps> = ({ title, address, pincode, city, 
                         <div className="w-10 h-10 flex justify-center items-center">
                             <img src={image} alt="order picture" className="w-full h-full object-cover rounded-md"/>
                         </div>
-                        <div className="font-bold text-black mb-1 text-lg">{title}</div>
+                        <div className="font-medium text-black mb-1 text-[22px]">{title}</div>
                     </div>
-                    <div className="flex flex-col md:flex-row text-[24px] gap-4 mt-4 md:mt-0">
-                        <div className="text-blue-500 text-xl font-semibold tracking-wider">Rs. {price}</div>
+                    <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
+                        <div className="text-[#9077D2] text-2xl font-semibold tracking-wider">Rs. {price}</div>
                     </div>
                 </div>
-                <div className="text-gray-500 font-semibold mt-4 md:mt-2">{address}</div>
-                <span className="text-gray-500 font-semibold">{city}, {state} - {pincode}</span>
+                <div className="text-gray-500 font-medium text-xl mt-4 md:mt-2">{address}</div>
+                <span className="text-gray-500 font-medium text-xl">{city}, {state} - {pincode}</span>
             </div>
         </>
     )
