@@ -27,6 +27,7 @@ import {
   GAMING,
   GAMING_PROD,
   GAMING_CART,
+  CHECKOUT,
 } from "./constant";
 
 import Home from "Pages/Home";
@@ -49,6 +50,7 @@ import MyWishlist from "Pages/Shop/Wishlist/MyWishlist";
 import Gaming from "Pages/Shop/Gaming/Gaming";
 import GamingProduct from "Pages/Shop/Gaming/GamingProduct";
 import GamingCart from "Pages/Shop/Gaming/GamingCart";
+import Checkout from "Pages/Shop/Gaming/CheckOut";
 
 const router = createBrowserRouter([
   {
@@ -108,6 +110,9 @@ const router = createBrowserRouter([
           },
           {
             path : GAMING_CART, element: <GamingCart/>
+          },
+          {
+            path : CHECKOUT, element : <Checkout/>
           }
         ],
       },

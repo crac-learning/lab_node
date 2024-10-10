@@ -23,4 +23,5 @@ export const WISHLIST ="/shop/settings/wishlist"
 export const GAMING = "/shop/gaming";
 export const GAMING_PROD = "/shop/gaming/product";
 export const GAMING_CART = "/shop/cart";
+export const CHECKOUT = "/shop/checkout";
 

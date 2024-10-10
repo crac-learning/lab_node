@@ -10,14 +10,14 @@ const BreadcrumbsComponent: React.FC = () => {
   const location = useLocation();
   const breadcrumbs = [];
 
-  breadcrumbs.push(<Link key="account" color="inherit" href="/">Account</Link>);
-  breadcrumbs.push(<Link key="gaming" color="inherit" href="product">Gaming</Link>);
+  breadcrumbs.push(<Link key="account" color="inherit" sx={{textDecoration: "none"}} href="/">Account</Link>);
+  breadcrumbs.push(<Link key="gaming" color="inherit" sx={{textDecoration: "none"}} href="product">Gaming</Link>);
 
   // Generate breadcrumbs based on the current route
   if (location.pathname.includes('product')) {
     // breadcrumbs.push(<Link key="account" color="inherit" href="/">Account</Link>);
     // breadcrumbs.push(<Link key="gaming" color="inherit" href="product">Gaming</Link>);
-    breadcrumbs.push(<Typography key="product" sx={{ color: 'black' }}>Havic HV G-92 Gamepad</Typography>);
+    breadcrumbs.push(<Typography key="product" sx={{ fontWeight: "bold" }}>Havic HV G-92 Gamepad</Typography>);
   }
 
 

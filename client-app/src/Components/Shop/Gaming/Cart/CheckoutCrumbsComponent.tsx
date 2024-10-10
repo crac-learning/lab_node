@@ -5,13 +5,16 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 
 
 
-const CartCrumbsComponent: React.FC = () => {
+const CheckoutCrumbsComponent: React.FC = () => {
 
 //   const location = useLocation();
   const breadcrumbs = [];
 
-  breadcrumbs.push(<Link key="home" color="inherit" href="./" sx={{textDecoration: "none"}}>Home</Link>);
-  breadcrumbs.push(<Link key="cart" color="inherit" href="cart" sx={{textDecoration: "none", fontWeight: "bold"}}>Cart</Link>);
+  breadcrumbs.push(<Link key="account" color="inherit" href="./" sx={{textDecoration: "none"}}>Account</Link>);
+  breadcrumbs.push(<Link key="my-account" color="inherit" href="profile" sx={{textDecoration: "none"}}>My Account</Link>);
+  breadcrumbs.push(<Link key="product" color="inherit" href="product" sx={{textDecoration: "none"}}>Product</Link>);
+  breadcrumbs.push(<Link key="view_cart" color="inherit" href="cart" sx={{textDecoration: "none"}}>View Cart</Link>);
+  breadcrumbs.push(<Link key="checkout" color="inherit" href="checkout" sx={{textDecoration: "none", fontWeight: "bold"}}>CheckOut</Link>);
 
 //   // Generate breadcrumbs based on the current route
 //   if (location.pathname.includes('product')) {
@@ -30,4 +33,4 @@ const CartCrumbsComponent: React.FC = () => {
   )
 }
 
-export default CartCrumbsComponent;
+export default CheckoutCrumbsComponent;
