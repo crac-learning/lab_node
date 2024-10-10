@@ -1,14 +1,14 @@
 import {FormInput} from 'Components/Shop/AccountSettings/FormFields';
-import React from 'react';
+import React  from 'react';
 import { RxPerson } from "react-icons/rx";
 
 const ProfileForm: React.FC = () => {
   return (
-    <div className="bg-white p-8 text-left flex flex-col">
+    <div className="bg-white p-8 text-left flex flex-col w-full">
       <div className="text-xl font-medium mb-4 text-[#9077D2]">Edit Your Profile</div>
       {/* file/ image upload section */}
       <div className='mb-4'>
-      <RxPerson  className='text-white border bg-[#9077D2] size-52 rounded-full p-8'/>
+      <RxPerson  className='text-white border bg-[#9077D2] size-[150px] rounded-full p-8'/>
       </div>
       
 

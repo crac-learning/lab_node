@@ -24,6 +24,9 @@ import {
   ORDERS,
   WISHLIST,
   RETURNS,
+  GAMING,
+  GAMING_PROD,
+  GAMING_CART,
 } from "./constant";
 
 import Home from "Pages/Home";
@@ -43,6 +46,9 @@ import ProfileForm from "Pages/Shop/AccountSettings/ProfileForm";
 import MyOrders from "Pages/Shop/Orders/MyOrders";
 import Returns from "Pages/Shop/Orders/Returns";
 import MyWishlist from "Pages/Shop/Wishlist/MyWishlist";
+import Gaming from "Pages/Shop/Gaming/Gaming";
+import GamingProduct from "Pages/Shop/Gaming/GamingProduct";
+import GamingCart from "Pages/Shop/Gaming/GamingCart";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +98,16 @@ const router = createBrowserRouter([
               { path: WISHLIST, element: <MyWishlist /> },
               {path: "", element : <Navigate to = {PROFILE} replace/> } 
             ]
+          },
+          {
+            path: GAMING, element: <Gaming />, children: [
+              { path: GAMING_PROD, element: <GamingProduct /> },
+              
+              // { path: "", element: <Navigate to={GAMING} replace /> }
+            ]
+          },
+          {
+            path : GAMING_CART, element: <GamingCart/>
           }
         ],
       },

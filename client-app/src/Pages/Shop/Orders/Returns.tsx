@@ -5,7 +5,7 @@ import order1_img from "../../../Assets/images/order_1.png";
 
 const Returns: React.FC = () => {
     return (
-        <div className="bg-white text-left flex flex-col">
+        <div className="bg-white text-left flex flex-col w-full">
         <div className='flex justify-between mb-4 items-center'>
           <h2 className="text-xl font-medium mb-4 text-black">Your Returns</h2>
         </div>

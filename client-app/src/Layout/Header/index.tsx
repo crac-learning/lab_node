@@ -27,6 +27,7 @@ import {
   FOOTWEAR,
   LOGIN,
   ACCOUNT_SETTINGS,
+  GAMING,
 } from "Routes/constant";
 import { selectSearchedProducts, setSearchedProducts } from "Pages/Shop/Redux";
 import { IProduct } from "Utils/types";
@@ -77,6 +78,10 @@ function Header() {
 
   const openSettings = () => {
     navigate(ACCOUNT_SETTINGS);
+  }
+
+  const openGamePage = () => {
+    navigate(GAMING);
   }
 
   useEffect(() => {
@@ -356,6 +361,9 @@ function Header() {
                             </div>
                             <div className="text-center hover:font-medium py-2" onClick={openSettings}>
                               Settings
+                            </div>
+                            <div className="text-center hover:font-medium py-2" onClick={openGamePage}>
+                              Gaming
                             </div>
                             
                           </div>

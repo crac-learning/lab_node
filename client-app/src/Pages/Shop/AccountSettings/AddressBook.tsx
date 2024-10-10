@@ -10,7 +10,7 @@ const AddressBook: React.FC = () => {
   const handleCloseModal = () => setOpenModal(false);
 
   return (
-    <div className=" bg-white p-2 text-left flex flex-col">
+    <div className=" bg-white p-2 text-left flex flex-col w-full">
       <div className='flex justify-between mb-4 items-center'>
         <h2 className="text-xl font-medium mb-4 text-black">Your Addresses</h2>
         <div><button className='text-[#9077D2] bg-transparent border-[#9077D2] px-8 py-4' onClick={handleOpenModal}>+ Add New Address</button></div>

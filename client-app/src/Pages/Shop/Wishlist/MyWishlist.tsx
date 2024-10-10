@@ -1,10 +1,10 @@
-import Collection from 'Components/Shop/Collection';
 import React from 'react'
 import { IProduct } from 'Utils/types';
 
 import image1 from "../../../Assets/images/order_1.png"
 import image2 from "../../../Assets/images/product_2.png"
 import image3 from "../../../Assets/images/product_3.png"
+import ProductBox from 'Components/Shop/ProductBox';
 
 const wishlistProducts: IProduct[] = [
   // Sample product data
@@ -58,13 +58,15 @@ const wishlistProducts: IProduct[] = [
 
 const MyWishlist : React.FC = () => {
     return (
-        <div className="bg-white text-left flex flex-col">
+        <div className="bg-white text-left flex flex-col w-full">
         <div className='flex justify-between mb-4 items-center'>
           <h2 className="text-xl font-medium mb-4 text-black">Your Wishlist</h2>
         </div>
   
-        <div className='flex flex-col gap-6 '>
-        <Collection collection={wishlistProducts} />
+        <div className='flex gap-6 '>
+        {wishlistProducts.map((product) => (
+          <ProductBox product={product} key={product.sku} />
+        ))}
         </div>
   
       </div>

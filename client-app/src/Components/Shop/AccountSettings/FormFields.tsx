@@ -11,8 +11,8 @@ interface FormInputProps {
 export const FormInput: React.FC<FormInputProps> = ({ label, type, placeholder }) => {
     return (
         <div>
-            <label className="block text-black text-left font-normal mb-1">{label}</label>
-            <input type={type} className="w-full p-2 rounded-md bg-gray-100 placeholder-neutral-500 text-black" placeholder={placeholder} />
+            <label className="block text-black text-left font-medium mb-1">{label}</label>
+            <input type={type} className="w-full px-3 py-4 rounded-md bg-[#f5f5f5] placeholder-neutral-500 text-black mb-2" placeholder={placeholder} />
         </div>
     )
 }
@@ -20,7 +20,7 @@ export const FormInput: React.FC<FormInputProps> = ({ label, type, placeholder }
 interface OptionProps {
     label: string;
     placeholder?: string;
-    options: string[];
+    options: string[];  
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
@@ -29,9 +29,9 @@ export const OptionInput: React.FC<OptionProps> = ({ label, placeholder, options
 
     return (
         <div>
-            <label className="block text-left text-black font-normal mb-1">{label}</label>
+            <label className="block text-left text-black font-medium mb-1">{label}</label>
             <select
-                className="w-full border border-gray-300 p-2 rounded-md bg-gray-100 placeholder-neutral-500 text-black"
+                className="w-full p-2 rounded-md bg-[#f5f5f5] placeholder-neutral-500 text-black"
                 value={value}
                 onChange={onChange}
             >

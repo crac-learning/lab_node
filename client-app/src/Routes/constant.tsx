@@ -19,3 +19,8 @@ export const ORDERS = "/shop/settings/orders"
 export const RETURNS = "/shop/settings/returns"
 
 export const WISHLIST ="/shop/settings/wishlist"
+
+export const GAMING = "/shop/gaming";
+export const GAMING_PROD = "/shop/gaming/product";
+export const GAMING_CART = "/shop/cart";
+
