@@ -25,3 +25,8 @@ export const GAMING_PROD = "/shop/gaming/product";
 export const GAMING_CART = "/shop/cart";
 export const CHECKOUT = "/shop/checkout";
 
+export const ADMIN = "/shop/admin";
+export const ADMIN_PRODUCT = "/shop/admin/products";
+export const ADMIN_ORDER = "/shop/admin/orders";
+export const ADMIN_COUPON = "/shop/admin/coupons";
+

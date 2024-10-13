@@ -63,9 +63,11 @@ const MyWishlist : React.FC = () => {
           <h2 className="text-xl font-medium mb-4 text-black">Your Wishlist</h2>
         </div>
   
-        <div className='flex gap-6 '>
+        <div className='flex flex-wrap gap-6 '>
         {wishlistProducts.map((product) => (
-          <ProductBox product={product} key={product.sku} />
+            <div className='flex-basis-1/3'>
+                <ProductBox product={product} key={product.sku} />
+            </div>
         ))}
         </div>
   

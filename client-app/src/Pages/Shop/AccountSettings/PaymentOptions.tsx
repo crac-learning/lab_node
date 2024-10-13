@@ -1,5 +1,5 @@
 import { FormInput, OptionInput } from 'Components/Shop/AccountSettings/FormFields';
-import BasicModal from 'Components/Shop/AccountSettings/ModalSheet';
+import BasicModal from 'Components/Shop/ModalSheet';
 import PaymentField from 'Components/Shop/AccountSettings/PaymentField';
 import React, { useState } from 'react';
 
@@ -58,17 +58,17 @@ const PaymentOptions: React.FC = () => {
       </div>
       <BasicModal open={openModal} onClose={handleCloseModal}>   
         {/* modal sheet  */}
-        <div className="text-sm"> 
-          <div className="flex justify-between items-center mb-6">
-            <div className='text-[#9077D2] font-medium'>Add New Method</div>
-            <div onClick={handleCloseModal} className="cursor-pointer">X</div>
+        <div className="text-sm p-2"> 
+          <div className="flex justify-between items-center mb-8">
+            <div className='text-[#9077D2] font-medium text-xl'>Add New Method</div>
+            <div onClick={handleCloseModal} className="cursor-pointer text-[#9077D2]">X</div>
           </div>
           <form>
             <OptionInput label="Payment Type" placeholder="Credit/Debit Card" options={['Credit Only', 'UPI', 'Netbanking', 'Credit/Debit Card', 'Debit Only']} /><br />
             <FormInput label="Card Number" placeholder="**** **** **** ****" type="text" /><br />
             <FormInput label="Name on Card" placeholder="Enter your name" type="text" /><br />
             <FormInput label="Expiry Date" placeholder="MM/YYYY" type="text" /><br />
-            <div className="flex items-center justify-end gap-2 mt-5">
+            <div className="flex items-center justify-end gap-2 mt-4 pr-8">
               <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
               <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
             </div>

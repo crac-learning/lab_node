@@ -28,6 +28,10 @@ import {
   GAMING_PROD,
   GAMING_CART,
   CHECKOUT,
+  ADMIN,
+  ADMIN_PRODUCT,
+  ADMIN_ORDER,
+  ADMIN_COUPON,
 } from "./constant";
 
 import Home from "Pages/Home";
@@ -50,7 +54,11 @@ import MyWishlist from "Pages/Shop/Wishlist/MyWishlist";
 import Gaming from "Pages/Shop/Gaming/Gaming";
 import GamingProduct from "Pages/Shop/Gaming/GamingProduct";
 import GamingCart from "Pages/Shop/Gaming/GamingCart";
-import Checkout from "Pages/Shop/Gaming/CheckOut";
+import AdminHomePage from "Pages/Shop/Admin";
+import Checkout from "Pages/Shop/Gaming/Checkout";
+import AdminProduct from "Pages/Shop/Admin/AdminProduct";
+import AdminOrders from "Pages/Shop/Admin/AdminOrders";
+import AdminCoupons from "Pages/Shop/Admin/AdminCoupons";
 
 const router = createBrowserRouter([
   {
@@ -104,15 +112,18 @@ const router = createBrowserRouter([
           {
             path: GAMING, element: <Gaming />, children: [
               { path: GAMING_PROD, element: <GamingProduct /> },
-              
               // { path: "", element: <Navigate to={GAMING} replace /> }
             ]
           },
+          { path : GAMING_CART, element: <GamingCart/>},
+          
+          {path : CHECKOUT, element : <Checkout/> },
           {
-            path : GAMING_CART, element: <GamingCart/>
-          },
-          {
-            path : CHECKOUT, element : <Checkout/>
+            path: ADMIN, element : <AdminHomePage/>, children : [
+              {path: ADMIN_PRODUCT, element : <AdminProduct/>},
+              {path: ADMIN_ORDER, element : <AdminOrders/>},
+              {path: ADMIN_COUPON, element : <AdminCoupons/>}
+            ]
           }
         ],
       },

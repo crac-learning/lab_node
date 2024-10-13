@@ -9,11 +9,12 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: '50%',
     bgcolor: 'white',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    fontFamily : "Montserrat !important"
 };
 
 interface BasicModalProps {
@@ -35,7 +36,7 @@ const BasicModal: React.FC<BasicModalProps> = ({ open, onClose, children }) => {
                 <Typography id="modal-title" variant="h6" component="h2">
                     {children}
                 </Typography>
-                <br/>
+                <br />
                 {/* <Button onClick={onClose}>Close</Button> */}
             </Box>
         </Modal>

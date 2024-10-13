@@ -10,7 +10,7 @@ export const BillingField: React.FC<BillingFieldProps> = ({ label, value }) => {
         <>
             <div className='flex justify-between w-full'>
                 <div>{label}:</div>
-                <div className=''>${value}</div>
+                <div className=''>{value == "Free" ? '' : '$'} {value}</div>
             </div>
             
         </>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
-import BasicModal from "./ModalSheet";
+import BasicModal from "../ModalSheet";
 import { FormInput, OptionInput } from "./FormFields";
 
 
@@ -14,15 +14,15 @@ interface PaymentFieldProps {
     onClick: () => void; // Prop for handling click on the active indicator
 }
 
-const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expiry_date, isActive, onMenuToggle , onClick}) => {
+const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expiry_date, isActive, onMenuToggle, onClick }) => {
     const [openModal, setOpenModal] = useState(false);
     const [openModal2, setOpenModal2] = useState(false);
     const menuRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        const handleClickOutside =  (event : MouseEvent) => {
-            if(menuRef.current && !menuRef.current.contains(event.target as Node))
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node))
                 onMenuToggle();
         }
 
@@ -31,7 +31,7 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         }
-    },[onMenuToggle]);
+    }, [onMenuToggle]);
 
 
     const handleOpenModal = () => setOpenModal(true);
@@ -55,8 +55,8 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
                 <div className="relative">
                     <PiDotsThreeOutlineFill onClick={onMenuToggle} className="text-[#555172] cursor-pointer" />
 
-                    {isActive  && ( // Use the number to identify the active menu
-                        <div  ref={menuRef} className="absolute right-0 bg-white shadow-lg rounded-md w-40 font-medium text-black">
+                    {isActive && ( // Use the number to identify the active menu
+                        <div ref={menuRef} className="absolute right-0 bg-white shadow-lg rounded-md w-40 font-medium text-black">
                             <div onClick={handleOpenModal} className="py-2 px-4 hover:bg-gray-100 cursor-pointer border-b">Edit</div>
                             <div onClick={handleOpenModal2} className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Delete</div>
                         </div>
@@ -67,16 +67,16 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
             {/* Edit Modal */}
             <BasicModal open={openModal} onClose={handleCloseModal}>
                 <div className="text-sm">
-                    <div className="flex justify-between items-center mb-6">
-                        <div className='text-[#9077D2] font-medium'>Edit your payment method</div>
+                    <div className="flex justify-between items-center mb-8">
+                        <div className='text-[#9077D2] font-medium text-xl'>Edit your payment method</div>
                         <div onClick={handleCloseModal} className="cursor-pointer">X</div>
                     </div>
                     <form>
-                        <OptionInput label="Payment Type" placeholder="Credit/Debit Card" options={['Credit Only', 'UPI', 'Netbanking', 'Credit/Debit Card', 'Debit Only']} /><br/ >
+                        <OptionInput label="Payment Type" placeholder="Credit/Debit Card" options={['Credit Only', 'UPI', 'Netbanking', 'Credit/Debit Card', 'Debit Only']} /><br />
                         <FormInput label="Card Number" placeholder="**** **** **** ****" type="text" /><br />
                         <FormInput label="Name on Card" placeholder="Enter your name" type="text" /><br />
                         <FormInput label="Expiry Date" placeholder="MM/YYYY" type="text" /><br />
-                        <div className="flex items-center gap-2 justify-end mt-5">
+                        <div className="flex items-center gap-2 justify-end mt-4 pr-8">
                             <button type="button" className="text-gray-500 bg-transparent font-semibold">Cancel</button>
                             <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
                         </div>
@@ -87,12 +87,15 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
             {/* Delete Modal */}
             <BasicModal open={openModal2} onClose={handleCloseModal2}>
                 <div className="text-lg">
-                    <div className="flex justify-between items-center font-bold text-blue-500 mb-6">
+                    <div className="flex justify-between items-center font-medium text-blue-500 mb-6">
                         <div>Delete Payment Method</div>
-                        <div onClick={handleCloseModal2} className="cursor-pointer">X</div>
+                        <div onClick={handleCloseModal2} className="cursor-pointer text-[#9077D2]">X</div>
                     </div>
                     <form>
-                        <span className="text-center text-black">Are you sure you want to delete the <b>Payment</b> Method?</span>
+                        <div className="text-center text-black">Are you sure you want to delete the </div>
+                        <div className="flex gap-2 items-center justify-center">
+                            <span className="text-black"> <b>Payment</b> address? </span>
+                        </div>
                         <div className="flex items-center justify-around mt-5">
                             <button type="button" className="text-gray-500 bg-transparent font-semibold">No</button>
                             <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-md">Yes</button>
