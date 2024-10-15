@@ -11,7 +11,7 @@ const Returns: React.FC = () => {
         </div>
   
         <div className='flex flex-col gap-6'>
-          <OrderField image ={order1_img} title='HAVIT HV-G92 Gamepad' address='345P-34, Sector 45, Near main market' state='Haryana' city='Gurgaon' pincode='122003' price='4500' />
+          <OrderField image={order1_img} title='HAVIT HV-G92 Gamepad' address='345P-34, Sector 45, Near main market' state='Haryana' city='Gurgaon' pincode='122003' price={4500} email={''} />
           {/* <OrderField image ={order1_img} title='Office Address' address='5th Floor, Horizon one centre, Golf course road' state='Haryana' city='Gurgaon' pincode='122002' price='6000' /> */}
         </div>
   

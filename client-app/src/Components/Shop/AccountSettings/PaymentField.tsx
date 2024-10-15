@@ -49,7 +49,7 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
                     </div>
                     <div className="flex flex-col justify-center items-start flex-wrap text-[#D7D8D7] font-medium mb-1 text-sm">
                         <div> **** **** **** {number}</div>
-                        <div>Expiry {expiry_date}</div>
+                        <div className="font-normal">Expiry {expiry_date}</div>
                     </div>
                 </div>
                 <div className="relative">

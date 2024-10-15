@@ -1,10 +1,11 @@
 import React from 'react'
-import { Box, Rating } from '@mui/material';
-import StarIcon from '@mui/icons-material/Star';
+import { Box } from '@mui/material';
+// import StarIcon from '@mui/icons-material/Star';
+import CustomStarRating from './CustomRatingComponent';
 
 
 const ReviewContainer: React.FC = () => {
-    const [value, setValue] = React.useState<number | null>(2);
+    // const [value, setValue] = React.useState<number | null>(2);
 
 
     return (
@@ -17,20 +18,22 @@ const ReviewContainer: React.FC = () => {
                 </div>
                 <div className='flex flex-col gap-2 items-start mt-4 pl-12 w-full pr-10'>
                     <Box sx={{ '& > legend': { mt: 2 } }}>
-                        <Rating
+                        {/* <Rating
                             name="simple-controlled"
                             value={value}
+                            
                             onChange={(_event, newValue) => {
                                 setValue(newValue);
                             }}
                             // max={5}
-                            emptyIcon={<StarIcon style={{ opacity: 0.5, color: 'gray', fontSize: 24 }} />}
+                            emptyIcon={<StarIcon style={{ opacity: 0.5, color: 'gray', fontSize: 24 ,}} />}
                             size='medium'
-                        />
+                        /> */}
+                        <CustomStarRating/>
                     </Box>
 
                     <div className='w-full'>
-                        <textarea name="review_box" id="" placeholder='Write a review' className='text-black placeholder:font-extralight bg-white border rounded-md border-black w-full '></textarea>
+                        <textarea name="review_box" id="" placeholder='Write a review' className='text-black placeholder:font-extralight bg-white border rounded-md border-black w-full px-4 py-3'></textarea>
                     </div>
 
                     <div className='flex self-end bg-[#9077D2] text-white px-8 py-2 rounded-md mt-2'>

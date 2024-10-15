@@ -46,7 +46,7 @@ const wishlistProducts: IProduct[] = [
         reviews: []
     },
     {
-        sku: '124', title: 'Product 2', banner: image2, price: 450,
+        sku: '128', title: 'Product 2', banner: image2, price: 450,
         _id: '',
         images: [],
         description: '',
@@ -78,9 +78,9 @@ const AdminProduct: React.FC = () => {
                 <h2 className="text-xl font-medium mb-4 text-[#9077D2]">Product List</h2>
                 <div> <button className='text-[#9077D2] bg-transparent border-[#9077D2] px-8 py-4' onClick={handleOpenModal} >+ Add New Product</button></div>
             </div>
-            <div className='flex flex-wrap gap-6 '>
+            <div className='grid grid-cols-3 gap-6 '>
                 {wishlistProducts.map((product) => (
-                    <div className='flex-basis-1/3'>
+                    <div key={product.sku}>
                         <ProductBox product={product} key={product.sku} />
                     </div>
                 ))}
@@ -99,8 +99,8 @@ const AdminProduct: React.FC = () => {
                         <div className='w-full font-medium mb-6'>
                             <label htmlFor="description" className='block text-black text-left mb-2'>Banner & Other Images</label>
                             <div className='flex gap-2 justify-start items-center'>
-                            {uploadImages.map(_ => (
-                                <div className='cursor-pointer flex bg-[#9077D2] w-[60px] h-[60px] p-10 rounded justify-center items-center'>
+                            {uploadImages.map((_, index) => (
+                                <div key={index} className='cursor-pointer flex bg-[#9077D2] w-[60px] h-[60px] p-10 rounded justify-center items-center'>
                                     <div className='flex font-bold text-white'>
                                         <FiUpload size={40}/>
                                     </div>

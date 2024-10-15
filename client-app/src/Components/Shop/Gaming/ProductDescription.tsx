@@ -18,8 +18,8 @@ export const FeatureItem: React.FC<{ icon: React.ReactNode; title: string; subti
     <div className='flex items-center gap-4'>
         <div>{icon}</div>
         <div className='flex flex-col text-left'>
-            <div className='mb-1 font-semibold text-base'>{title}</div>
-            <div className='font-semibold underline text-[12px]'>{subtitle}</div>
+            <div className='mb-1 font-[550] text-base'>{title}</div>
+            <div className='font-[550] underline text-[12px]'>{subtitle}</div>
         </div>
     </div>
 );

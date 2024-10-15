@@ -25,8 +25,8 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
         <>
             <div className="flex flex-col bg-gray-100 rounded-md p-8 font-medium">
                 <div className="flex justify-between items-center ">
-                    <div className=" text-black mb-1 ">{title}</div>
-                    <div className="flex flex-col md:flex-row text-[20px] gap-4">
+                    <div className=" text-black mb-1 text-xl">{title}</div>
+                    <div className="flex flex-col md:flex-row text-xl gap-4">
                         <FiEdit className="text-[#9077D2] cursor-pointer" onClick={handleOpenModal} />
                         <HiOutlineTrash className="text-[#9077D2] cursor-pointer" onClick={handleOpenModal2} />
                     </div>
