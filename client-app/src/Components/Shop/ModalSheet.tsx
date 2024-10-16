@@ -14,7 +14,7 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-    fontFamily : "Montserrat !important"
+    // fontFamily : "Montserrat !important"
 };
 
 interface BasicModalProps {
@@ -33,7 +33,7 @@ const BasicModal: React.FC<BasicModalProps> = ({ open, onClose, children }) => {
             aria-describedby="modal-description"
         >
             <Box sx={style}>
-                <Typography id="modal-title" variant="h6" component="h2">
+                <Typography id="modal-title" variant="h6" component="h2" sx={{fontFamily: "Montserrat, sans-serif"}}>
                     {children}
                 </Typography>
                 <br />

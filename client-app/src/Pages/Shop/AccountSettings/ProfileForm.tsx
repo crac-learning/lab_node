@@ -1,4 +1,5 @@
 import {FormInput} from 'Components/Shop/AccountSettings/FormFields';
+import CustomButton from 'Components/Shop/CustomButton';
 import React  from 'react';
 import { RxPerson } from "react-icons/rx";
 
@@ -23,8 +24,8 @@ const ProfileForm: React.FC = () => {
 
 
         <div className="flex space-x-4 mt-4 justify-end">
-          <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
-          <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save</button>
+          <CustomButton label="Cancel"/>
+          <CustomButton label="Save Changes"/>
         </div>  
       </form>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { FormInput } from "Components/Shop/AccountSettings/FormFields";
 import BasicModal from "Components/Shop/ModalSheet";
+import CustomButton from "Components/Shop/CustomButton";
 
 interface OrderFieldProps {
     name: string,
@@ -116,6 +117,11 @@ const CouponField: React.FC<OrderFieldProps> = ({ name, type, value, limit }) =>
               </div>
             </div>
 
+            <div className="flex items-center justify-end gap-2 mt-8">
+              <CustomButton label="Cancel"/>
+              <CustomButton label="Save Changes"/>
+            </div>
+
           </form>
         </div>
       </BasicModal>
@@ -135,8 +141,8 @@ const CouponField: React.FC<OrderFieldProps> = ({ name, type, value, limit }) =>
                             <span className="text-black"> <b>coupon</b>? </span>
                         </div>
                         <div className="flex items-center justify-around mt-5">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">No</button>
-                            <button type="submit" className="bg-sky-600 text-white px-12 py-4 rounded-md">Yes</button>
+                          <CustomButton label="No"/>
+                          <CustomButton label="Yes"/>
                         </div>
 
                     </form>

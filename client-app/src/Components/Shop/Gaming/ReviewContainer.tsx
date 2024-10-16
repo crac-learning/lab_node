@@ -36,9 +36,9 @@ const ReviewContainer: React.FC = () => {
                         <textarea name="review_box" id="" placeholder='Write a review' className='text-black placeholder:font-extralight bg-white border rounded-md border-black w-full px-4 py-3'></textarea>
                     </div>
 
-                    <div className='flex self-end bg-[#9077D2] text-white px-8 py-2 rounded-md mt-2'>
+                    <button className='flex self-end bg-[#9077D2] text-white px-8 py-2 rounded-md mt-2'>
                         Submit
-                    </div>
+                    </button>
                 </div>
             </div>
         </>

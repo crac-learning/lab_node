@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import BasicModal from "../ModalSheet";
 import { FormInput, OptionInput } from "./FormFields";
+import CustomButton from "../CustomButton";
 
 
 interface PaymentFieldProps {
@@ -47,7 +48,7 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
                     <div className="w-10 h-10 flex justify-center items-center">
                         <img src={image} alt="card" className="w-full h-full object-contain" />
                     </div>
-                    <div className="flex flex-col justify-center items-start flex-wrap text-[#D7D8D7] font-medium mb-1 text-sm">
+                    <div className="flex flex-col justify-center items-start flex-wrap text-black font-medium mb-1 text-sm">
                         <div> **** **** **** {number}</div>
                         <div className="font-normal">Expiry {expiry_date}</div>
                     </div>
@@ -77,8 +78,8 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
                         <FormInput label="Name on Card" placeholder="Enter your name" type="text" /><br />
                         <FormInput label="Expiry Date" placeholder="MM/YYYY" type="text" /><br />
                         <div className="flex items-center gap-2 justify-end mt-4 pr-8">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">Cancel</button>
-                            <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
+                            <CustomButton label="Cancel"/>
+                            <CustomButton label="Save Changes"/>
                         </div>
                     </form>
                 </div>
@@ -97,8 +98,8 @@ const PaymentField: React.FC<PaymentFieldProps> = ({ active, image, number, expi
                             <span className="text-black"> <b>Payment</b> address? </span>
                         </div>
                         <div className="flex items-center justify-around mt-5">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">No</button>
-                            <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-md">Yes</button>
+                            <CustomButton label="No"/>
+                            <CustomButton label="Yes"/>
                         </div>
                     </form>
                 </div>

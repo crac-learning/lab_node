@@ -1,5 +1,6 @@
 import AddressField from 'Components/Shop/AccountSettings/AddressField';
 import { FormInput, OptionInput } from 'Components/Shop/AccountSettings/FormFields';
+import CustomButton from 'Components/Shop/CustomButton';
 import BasicModal from 'Components/Shop/ModalSheet';
 import React, { useState } from 'react';
 
@@ -47,8 +48,8 @@ const AddressBook: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center justify-end gap-2 mt-8 pr-8">
-              <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
-              <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
+              <CustomButton label="Cancel"/>
+              <CustomButton label="Save Changes"/>
             </div>
 
           </form>

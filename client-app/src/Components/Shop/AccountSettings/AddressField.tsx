@@ -3,6 +3,7 @@ import { FiEdit } from "react-icons/fi";
 import { HiOutlineTrash } from "react-icons/hi";
 import BasicModal from "../ModalSheet";
 import { FormInput, OptionInput } from "./FormFields";
+import CustomButton from "../CustomButton";
 
 interface AddressFieldProps {
     title: string,
@@ -61,8 +62,8 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                             </div>
                         </div>
                         <div className="flex items-center justify-end gap-2 mt-8 pr-8">
-                            <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
-                            <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
+                            <CustomButton label="Cancel"/>
+                            <CustomButton label="Save Changes"/>
                         </div>
 
                     </form>
@@ -84,8 +85,8 @@ const AddressField: React.FC<AddressFieldProps> = ({ title, address, pincode, ci
                             <span className="text-black"> <b>Home</b> address? </span>
                         </div>
                         <div className="flex items-center justify-around mt-5">
-                            <button type="button" className="text-gray-500 bg-transparent font-semibold">No</button>
-                            <button type="submit" className="bg-sky-600 text-white px-12 py-4 rounded-md">Yes</button>
+                            <CustomButton label="No"/>
+                            <CustomButton label="Yes"/>
                         </div>
 
                     </form>

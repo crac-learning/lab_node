@@ -9,6 +9,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { ProductFeatures } from 'Components/Shop/Gaming/ProductDescription';
 import { useNavigate } from 'react-router-dom';
 import { GAMING_CART } from 'Routes/constant';
+import ProductBuyButton from 'Components/Shop/ProductBuyButton';
 
 interface IProductNew extends IProduct {
     quantity: number;
@@ -39,12 +40,30 @@ const gaming_products: IProductNew[] = [
 
 const GamingProduct: React.FC = () => {
     const [value, setValue] = useState<number | null>(gaming_products[0].star_rating);
-    const [btnColor, setBtnColor] = useState<boolean | null>(false);
+    const [btnColor, setBtnColor] = useState<boolean[]>(gaming_products.map(()=>false));
+    const [quantities, setQuantities] = useState<number[]> (gaming_products.map(p => p.quantity));
     
 
-    const handleBtnColor = () => {
-        setBtnColor(!btnColor);
+    const incrementQty = (index: number) => {
+        const updatedQuantities = [...quantities];
+        updatedQuantities[index] +=1;
+        setQuantities(updatedQuantities);
+    }
+
+    const decrementQty = (index: number) => {
+        const updatedQuantities = [...quantities];
+        if(updatedQuantities[index] > 0)
+            updatedQuantities[index] -=1
+        
+        setQuantities(updatedQuantities);
+    }
+
+    const handleBtnColor = (index: number) => {
+        const updatedBtnColors = [...btnColor];
+        updatedBtnColors[index] = !updatedBtnColors[index];
+        setBtnColor(updatedBtnColors);
     };
+
 
     const navigate = useNavigate();
 
@@ -84,13 +103,14 @@ const GamingProduct: React.FC = () => {
 
                         {/* Quantity, Buy button, and Wishlist */}
                         <div className='flex justify-between items-center mb-12 w-full px-4  '>
-                            <div className='flex flex-row border border-black rounded-sm text-black justify-between items-center'>
-                                <div className={`px-4 text-3xl ${btnColor ? 'bg-white text-black' : 'bg-[#9077D2] text-white'}`} onClick={handleBtnColor}>-</div>
+                            <div className='flex flex-row border border-black rounded-md text-black justify-between items-center'>
+                                <ProductBuyButton label='-' isActive={!btnColor[index]} onClick={()=> {decrementQty(index); handleBtnColor(index);
+                                     }}/>
                                 <div className='px-6'>{product.quantity}</div>
-                                <div className={`px-4 text-3xl ${!btnColor ? 'bg-white text-black' : 'text-white bg-[#9077D2]'}`} onClick={handleBtnColor}>+</div>
+                                <ProductBuyButton label='+' isActive={btnColor[index]} onClick={()=> {incrementQty(index); handleBtnColor(index);}}/>
                             </div>
                             <div className='flex gap-6'>
-                                <div className='bg-[#9077D2] py-2 w-[188px] rounded-md text-base text-white font-semibold' onClick={()=>navigate(GAMING_CART)}>Buy Now</div>
+                                <button className='bg-[#9077D2] py-2 w-[188px] rounded-md text-base text-white font-semibold' onClick={()=>navigate(GAMING_CART)}>Buy Now</button>
                                 <div className='border border-black p-2 rounded-md text-black flex items-center'><IoIosHeartEmpty size={20} /></div>
                             </div>
                         </div>

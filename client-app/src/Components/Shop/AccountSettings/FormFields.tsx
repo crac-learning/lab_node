@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 
 interface FormInputProps {
@@ -10,11 +11,11 @@ interface FormInputProps {
 
 export const FormInput: React.FC<FormInputProps> = ({ label, type, placeholder }) => {
     return (
-        <div>
+        <Typography sx={{fontFamily :"Montserrat, sans-serif"}}>
             <label htmlFor={label} className="block text-black text-left font-medium mb-1">{label}</label>
             <input type={type} className="w-full p-4 rounded-md bg-[#f5f5f5] placeholder-neutral-500 text-black mb-2" placeholder={placeholder} />
-        </div>
-    )
+        </Typography>
+    )   
 }
 
 interface OptionProps {

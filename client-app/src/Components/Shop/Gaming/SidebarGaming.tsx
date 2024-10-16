@@ -12,7 +12,7 @@ const SidebarGaming: React.FC = () => {
 
       {/* <div className="font-bold mb-4 text-black text-left mt-12"></div> */}
       <div className="flex flex-col space-y-2 text-left p-4 gap-2">
-        <SidebarImageComponent to='./' image={gaming_prod_1} />
+        <SidebarImageComponent to='product' image={gaming_prod_1} />
         <SidebarImageComponent to='product' image={gaming_prod_2} />
         <SidebarImageComponent to='product' image={gaming_prod_3} />
         <SidebarImageComponent to='product' image={gaming_prod_4} />

@@ -8,7 +8,9 @@ import image3 from "Assets/images/product_3.png"
 import ProductBox from 'Components/Shop/ProductBox';
 import BasicModal from 'Components/Shop/ModalSheet';
 import { FormInput, OptionInput } from 'Components/Shop/AccountSettings/FormFields';
-import { FiUpload } from 'react-icons/fi';
+// import { FiUpload } from 'react-icons/fi';
+import CustomButton from 'Components/Shop/CustomButton';
+import ImageUpload from 'Components/Shop/ImageUpload';
 
 const wishlistProducts: IProduct[] = [
     // Sample product data
@@ -60,14 +62,10 @@ const wishlistProducts: IProduct[] = [
 ];
 
 
-const uploadImages = 
-
-[ {}, {}, {}, {}, {}];
-
-
 const AdminProduct: React.FC = () => {
 
     const [openModal, setOpenModal] = useState<boolean>(false);
+    const [uploadedImages, setUploadedImages] = useState<File[]>([]); // Store uploaded files
     const handleOpenModal = () => setOpenModal(true);
     const handleCloseModal = () => setOpenModal(false);
 
@@ -98,15 +96,10 @@ const AdminProduct: React.FC = () => {
                     <form>
                         <div className='w-full font-medium mb-6'>
                             <label htmlFor="description" className='block text-black text-left mb-2'>Banner & Other Images</label>
-                            <div className='flex gap-2 justify-start items-center'>
-                            {uploadImages.map((_, index) => (
-                                <div key={index} className='cursor-pointer flex bg-[#9077D2] w-[60px] h-[60px] p-10 rounded justify-center items-center'>
-                                    <div className='flex font-bold text-white'>
-                                        <FiUpload size={40}/>
-                                    </div>
-                                </div>
-                            ))}
-                            </div>
+                            <ImageUpload
+                                onImageChange={(files) => setUploadedImages(files)} // Handle image changes
+                                uploadedImages={uploadedImages.map(file => URL.createObjectURL(file))} // Convert File objects to URLs for preview
+                            />
                         </div>
                         <FormInput label="Product Title" placeholder="Enter product name" type="text" />
                         <br />
@@ -133,8 +126,8 @@ const AdminProduct: React.FC = () => {
                             </div>
                         </div>
                         <div className="flex items-center justify-end gap-2 mt-8">
-                            <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
-                            <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
+                            <CustomButton label="Cancel"/>
+                            <CustomButton label="Save Changes"/>
                         </div>
 
                     </form>

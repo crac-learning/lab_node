@@ -14,7 +14,7 @@ import bank_4 from "../../../Assets/images/bank_4.png";
 
 const initialList = [
   {
-    product: "LCD Monitor",
+    product: "LCD Monitor", 
     image: cart_img_1,
     price: 650,
     quantity: 1,
@@ -185,12 +185,12 @@ const Checkout: React.FC = () => {
           {/* coupon section */}
           <div className='flex w-[110%] gap-2 justify-between mb-8 items-center font-semibold'>
             <input type='text' placeholder='Coupon Code' className='w-[56%] border border-black rounded bg-white px-6 py-4'/>
-            <div className='bg-[#9077D2] p-4 rounded w-[40%] text-white'>Apply Coupon</div>
+            <button className='bg-[#9077D2] p-4 rounded w-[40%] text-white'>Apply Coupon</button>
           </div>
 
           <div className='flex w-full'>
              
-          </div><div className='bg-[#9077D2] p-4 rounded w-1/3 text-white'>Place Order</div>
+          </div><button className='bg-[#9077D2] p-4 rounded w-1/3 text-white'>Place Order</button>
 
         </div>
       </div>

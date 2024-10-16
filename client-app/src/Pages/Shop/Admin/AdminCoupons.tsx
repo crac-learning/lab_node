@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import CouponField from 'Components/Shop/Gaming/Admin/CouponField';
 import BasicModal from 'Components/Shop/ModalSheet';
 import { FormInput } from 'Components/Shop/AccountSettings/FormFields';
+import CustomButton from 'Components/Shop/CustomButton';
 
 const AdminCoupons: React.FC = () => {
 
@@ -91,7 +92,7 @@ const AdminCoupons: React.FC = () => {
                   <div>One Time</div>
                 </div>
 
-                {/* Limited Option */}
+                {/* Unimited Option */}
                 <div
                   className='flex gap-2 cursor-pointer'
                   onClick={() => setUsageLimitation('Unlimited')}
@@ -99,9 +100,14 @@ const AdminCoupons: React.FC = () => {
                   <div
                     className={`w-4 h-4 rounded-full border-2 ${usageLimitation === 'Unlimited' ? 'border-[#01E538]' : 'border-black'}`}
                   ></div>
-                  <div>Limited</div>
+                  <div>Unimited</div>
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-2 mt-8">
+                <CustomButton label="Cancel"/>
+                <CustomButton label="Save Changes"/>
             </div>
 
           </form>

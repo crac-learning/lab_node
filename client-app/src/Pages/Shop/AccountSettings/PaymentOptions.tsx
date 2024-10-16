@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import paymentImage1 from '../../../Assets/images/payment_1.png';
 import paymentImage2 from '../../../Assets/images/payment_2.png';
 import paymentImage3 from '../../../Assets/images/payment_3.png';
+import CustomButton from 'Components/Shop/CustomButton';
 
 const PaymentOptions: React.FC = () => {
   const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
@@ -69,8 +70,8 @@ const PaymentOptions: React.FC = () => {
             <FormInput label="Name on Card" placeholder="Enter your name" type="text" /><br />
             <FormInput label="Expiry Date" placeholder="MM/YYYY" type="text" /><br />
             <div className="flex items-center justify-end gap-2 mt-4 pr-8">
-              <button type="button" className="text-black bg-transparent font-normal">Cancel</button>
-              <button type="submit" className="bg-[#9077D2] text-white px-12 py-4 font-medium rounded-md">Save Changes</button>
+              <CustomButton label="Cancel"/>
+              <CustomButton label="Save Changes"/>
             </div>
           </form>
         </div>
